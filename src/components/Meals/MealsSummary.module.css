@@ -6,12 +6,12 @@
   margin-top: -10rem;
   position: relative;
   /* background: linear-gradient(50deg, #ffa7a713, #00000040); */
-  background-color: rgba(0, 0, 0, 0.397);
+  background-color: #272727;
   color: white;
   border-radius: 15px;
-  backdrop-filter: blur(5px);
+  /* backdrop-filter: blur(5px); */
   padding: 1rem;
-  box-shadow: 0 -1px 18px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 -1px 18px 10px rgba(0, 0, 0, 0.15);
 }
 
 .summary h2 {
