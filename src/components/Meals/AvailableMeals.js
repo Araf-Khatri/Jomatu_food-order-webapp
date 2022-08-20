@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 
+import { DATABASE_URL } from "../../URL/nothing";
 import Card from "../UI/Card";
 import MealItem from "./MealItem/MealItem";
 
@@ -13,7 +14,7 @@ const AvailableMeals = () => {
   useEffect(() => {
     const fetchMeals = async () => {
       const response = await fetch(
-        "https://react-http-f46cb-default-rtdb.asia-southeast1.firebasedatabase.app/meals.json"
+        `${DATABASE_URL}/meals.json`
       );
 
       if (!response.ok) {

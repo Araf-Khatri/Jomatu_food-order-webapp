@@ -1,5 +1,6 @@
 import React, { Fragment, useContext, useState } from "react";
 
+import { DATABASE_URL } from "../../URL/nothing";
 import Modal from "../UI/Modal";
 import CartItem from "./CartItem";
 import CartContext from "../../store/cart-context";
@@ -32,7 +33,7 @@ const Cart = (props) => {
   const submitOrderHandler = async (userData) => {
     setIsSubmitting(true);
     await fetch(
-      "https://react-http-f46cb-default-rtdb.asia-southeast1.firebasedatabase.app/orders.json",
+      `${DATABASE_URL}/orders.json`,
       {
         method: "POST",
         body: JSON.stringify({
