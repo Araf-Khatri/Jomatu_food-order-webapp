@@ -1,6 +1,8 @@
-> Jomatu webapp
+## [Jomatu - A Food-ordering website 🔗](https://jomatu-by-araf.netlify.app/)
 
-Everything in webapp is implemented using **ReactJs** and **CSS module**.
+```
+Everything in website is implemented using ReactJs, ReactContextAPI, CSS module & Firebase as a backend.
 
-* Used **firebase** for a backend. so users choose available food and order it.
-* Used React Context API so data can be updated and stored in one place and the data can be post to the database.
+Food data is fetched from firebase.
+After users orders a Food the data posted to firebase. 
+```
