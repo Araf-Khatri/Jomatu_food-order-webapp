@@ -48,6 +48,7 @@ const AvailableMeals = () => {
       name={meal.name}
       description={meal.description}
       price={meal.price}
+      restaurant_name={meal.restaurant_name}
     />
   ));
 

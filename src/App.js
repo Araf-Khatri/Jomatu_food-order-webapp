@@ -61,13 +61,16 @@ function App() {
 
       {isAdminLoggedIn ? (
         <Route path="admin" element={<AdminLayout />}>
-          <Route index element={<Navigate to="restaurants" />} />
-
           <Route path="restaurants" element={<Restaurants />} />
           <Route path="restaurants/:restaurantId" element={<Restaurant />} />
+
           <Route path="orders" element={<OrdersListing />} />
 
-          <Route path="*" element={<Navigate to="/admin/restaurants" />} />
+          <Route index element={<Navigate to="/admin/restaurants" />} />
+          <Route
+            path="*"
+            element={<Navigate to="/admin/restaurants" replace />}
+          />
         </Route>
       ) : (
         <>

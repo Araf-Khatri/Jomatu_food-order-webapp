@@ -67,6 +67,7 @@ const Restaurant = () => {
         name,
         description,
         price,
+        restaurant_name: restaurant?.name,
       });
       setMeals((prev) => [meal, ...prev]);
       setShowDialog(false);
