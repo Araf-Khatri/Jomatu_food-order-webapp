@@ -45,6 +45,12 @@
   padding-left: 28px;
 }
 
+.admin-navbar-link.active {
+  background-color: #34495e;
+  border-left-color: #3498db;
+  padding-left: 28px;
+}
+
 .admin-navbar-link:active {
   background-color: #1a252f;
   border-left-color: #2980b9;
