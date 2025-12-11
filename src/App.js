@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
 import AdminLayout from "./admin/AdminLayout";
@@ -17,7 +17,7 @@ const { REACT_APP_ADMIN_PASSWORD } = process.env;
 function App() {
   const navigate = useNavigate();
   const [cartIsShown, setCartIsShown] = useState(false);
-  const [isAdminLoggedIn, setIsAdminLoggedIn] = useState(true);
+  const [isAdminLoggedIn, setIsAdminLoggedIn] = useState(false);
   const showCartHandler = () => {
     setCartIsShown(true);
   };
@@ -36,6 +36,13 @@ function App() {
       navigate("/admin/restaurants");
     }
   };
+
+  useEffect(() => {
+    const adminToken = cookies.get("adminToken");
+    if (adminToken) {
+      setIsAdminLoggedIn(true);
+    }
+  }, []);
 
   return (
     <Routes>
