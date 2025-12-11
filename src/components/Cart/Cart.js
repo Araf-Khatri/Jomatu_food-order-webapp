@@ -1,11 +1,11 @@
-import React, { Fragment, useContext, useState } from "react";
+import { Fragment, useContext, useState } from "react";
 
-import { DATABASE_URL } from "../../URL/nothing";
+import CartContext from "../../store/cart-context";
 import Modal from "../UI/Modal";
 import CartItem from "./CartItem";
-import CartContext from "../../store/cart-context";
 import Checkout from "./Checkout";
 
+import { addOrder } from "../../firebase/handlers";
 import classes from "./Cart.module.css";
 
 const Cart = (props) => {
@@ -15,7 +15,7 @@ const Cart = (props) => {
 
   const cartCtx = useContext(CartContext);
 
-  const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
+  const totalAmount = `₹${cartCtx.totalAmount.toFixed(2)}`;
   const hasItems = cartCtx.items.length > 0;
 
   const cartItemRemoveHandler = (id) => {
@@ -32,16 +32,11 @@ const Cart = (props) => {
 
   const submitOrderHandler = async (userData) => {
     setIsSubmitting(true);
-    await fetch(
-      `${DATABASE_URL}/orders.json`,
-      {
-        method: "POST",
-        body: JSON.stringify({
-          user: userData,
-          orderedItems: cartCtx.items,
-        }),
-      }
-    );
+    await addOrder({
+      user: userData,
+      orderedItems: cartCtx.items,
+      status: "pending",
+    });
     setIsSubmitting(false);
     setDidSubmit(true);
     cartCtx.clearCart();

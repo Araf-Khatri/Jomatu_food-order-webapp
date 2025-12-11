@@ -1,0 +1,129 @@
+.restaurant-listing-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 40px;
+}
+
+.restaurant-listing-heading-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.restaurant-listing-title {
+  font-size: 36px;
+  color: #2c3e50;
+  margin: 0 0 10px 0;
+  font-weight: bold;
+}
+
+.restaurant-listing-subtitle {
+  font-size: 16px;
+  color: #7f8c8d;
+  margin: 0;
+}
+
+.restaurant-listing-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.restaurant-listing-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.restaurant-listing-card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.restaurant-listing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.restaurant-listing-icon {
+  font-size: 40px;
+  flex-shrink: 0;
+}
+
+.restaurant-listing-info {
+  flex: 1;
+}
+
+.restaurant-listing-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin: 0 0 8px 0;
+}
+
+.restaurant-listing-address {
+  font-size: 14px;
+  color: #95a5a6;
+  margin: 0;
+}
+
+.restaurant-listing-cta {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+  width: 100%;
+}
+
+.restaurant-listing-cta:hover {
+  background-color: #2980b9;
+  transform: scale(1.02);
+}
+
+.restaurant-listing-cta:active {
+  background-color: #1f618d;
+  transform: scale(0.98);
+}
+
+.restaurant-listing-create-btn {
+  background-color: #375472;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  font: inherit;
+  cursor: pointer;
+}
+
+.restaurant-listing-create-btn:hover {
+  background-color: #2c3e50;
+}
+
+@media (max-width: 768px) {
+  .restaurant-listing-page {
+    padding: 20px;
+  }
+
+  .restaurant-listing-title {
+    font-size: 28px;
+  }
+
+  .restaurant-listing-container {
+    grid-template-columns: 1fr;
+  }
+}

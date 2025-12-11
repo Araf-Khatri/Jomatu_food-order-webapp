@@ -1,1 +1,0 @@
-export const DATABASE_URL = 'https://check-3e463-default-rtdb.asia-southeast1.firebasedatabase.app/';

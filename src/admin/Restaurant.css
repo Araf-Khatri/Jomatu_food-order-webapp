@@ -1,0 +1,141 @@
+.meals-page-wrapper {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 40px;
+}
+
+.meals-heading-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.meals-page-header {
+  margin-bottom: 40px;
+}
+
+.meals-page-title {
+  font-size: 32px;
+  color: #2c3e50;
+  margin: 0 0 10px 0;
+  font-weight: bold;
+}
+
+.meals-page-subtitle {
+  font-size: 16px;
+  color: #7f8c8d;
+  margin: 0;
+}
+
+.meals-page-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.meals-page-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.meals-page-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.meals-page-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.meals-page-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.meals-page-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2c3e50;
+  margin: 0 0 10px 0;
+}
+
+.meals-page-description {
+  font-size: 13px;
+  color: #95a5a6;
+  margin: 0 0 15px 0;
+  flex: 1;
+}
+
+.meals-page-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.meals-page-price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.meals-page-button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
+
+.meals-page-button:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+.meals-page-button:active {
+  background-color: #1f618d;
+  transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+  .meals-page-wrapper {
+    padding: 20px;
+  }
+
+  .meals-page-title {
+    font-size: 24px;
+  }
+
+  .meals-page-container {
+    grid-template-columns: 1fr;
+  }
+
+  .meals-page-card {
+    padding: 16px;
+  }
+
+  .meals-page-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .meals-page-button {
+    width: 100%;
+    padding: 12px;
+  }
+}
