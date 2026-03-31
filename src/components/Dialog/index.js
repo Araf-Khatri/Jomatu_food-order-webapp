@@ -1,4 +1,5 @@
 import { useState } from "react";
+import classes from "./../Cart/Cart.module.css";
 import "./index.css";
 
 const Dialog = ({
@@ -76,14 +77,14 @@ const Dialog = ({
               <div className="orders-page-dialog-actions">
                 <button
                   type="button"
-                  className="orders-page-dialog-cancel-button"
+                  className={`orders-page-dialog-cancel-button ${classes["button--alt"]}`}
                   onClick={handleCloseDialog}
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="orders-page-dialog-submit-button"
+                  className={`orders-page-dialog-submit-button ${classes.button}`}
                 >
                   Submit
                 </button>
