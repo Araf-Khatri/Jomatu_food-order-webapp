@@ -1,9 +1,8 @@
 import { useRef, useState } from "react";
 import classes from "./Checkout.module.css";
 
-const isEmpty = value => value.trim() == '';
-const isFiveChars = value => value.trim().length === 5;
-
+const isEmpty = (value) => value.trim() == "";
+const isSixChars = (value) => value.trim().length === 6;
 
 const Checkout = (props) => {
   const [formInputValidity, setFormInputValdity] = useState({
@@ -29,17 +28,20 @@ const Checkout = (props) => {
     const enteredNameIsValid = !isEmpty(enteredName);
     const enteredStreetIsValid = !isEmpty(enteredStreet);
     const enteredCityIsValid = !isEmpty(enteredCity);
-    const enteredPostalCodeIsValid = isFiveChars(enteredPostalCode)
+    const enteredPostalCodeIsValid = isSixChars(enteredPostalCode);
 
     setFormInputValdity({
       name: enteredNameIsValid,
       street: enteredStreetIsValid,
       city: enteredStreetIsValid,
-      postalCode: enteredPostalCodeIsValid
-    })
+      postalCode: enteredPostalCodeIsValid,
+    });
 
-    const formIsValid = enteredNameIsValid && enteredStreetIsValid && enteredCityIsValid && enteredPostalCodeIsValid;
-
+    const formIsValid =
+      enteredNameIsValid &&
+      enteredStreetIsValid &&
+      enteredCityIsValid &&
+      enteredPostalCodeIsValid;
 
     if (!formIsValid) {
       return;
@@ -49,17 +51,17 @@ const Checkout = (props) => {
       name: enteredName,
       street: enteredStreet,
       city: enteredCity,
-      postalCode: enteredPostalCode
+      postalCode: enteredPostalCode,
     });
   };
 
-  const nameControlClasses = `${classes.control} ${formInputValidity.name ? '' : classes.invalid}`;
+  const nameControlClasses = `${classes.control} ${formInputValidity.name ? "" : classes.invalid}`;
 
-  const streetControlClasses = `${classes.control} ${formInputValidity.street ? '' : classes.invalid}`;
+  const streetControlClasses = `${classes.control} ${formInputValidity.street ? "" : classes.invalid}`;
 
-  const postalCodeControlClasses = `${classes.control} ${formInputValidity.postalCode ? '' : classes.invalid}`;
+  const postalCodeControlClasses = `${classes.control} ${formInputValidity.postalCode ? "" : classes.invalid}`;
 
-  const cityCodeControlClasses = `${classes.control} ${formInputValidity.city ? '' : classes.invalid}`;
+  const cityCodeControlClasses = `${classes.control} ${formInputValidity.city ? "" : classes.invalid}`;
 
   return (
     <form className={classes.form} onSubmit={confirmHandler}>
@@ -72,12 +74,13 @@ const Checkout = (props) => {
         <label htmlFor="street">Street</label>
         <input type="text" id="street" ref={streetInputRef} />
         {!formInputValidity.street && <p>Please enter a valid street!</p>}
-
       </div>
       <div className={postalCodeControlClasses}>
         <label htmlFor="postal">Postal Code</label>
         <input type="text" id="postal" ref={postalCodeInputRef} />
-        {!formInputValidity.postalCode && <p>Please enter a valid postal code (5 characters long)!</p>}
+        {!formInputValidity.postalCode && (
+          <p>Please enter a valid postal code (5 characters long)!</p>
+        )}
       </div>
       <div className={cityCodeControlClasses}>
         <label htmlFor="city">City</label>
